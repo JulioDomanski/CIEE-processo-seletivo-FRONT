@@ -1,59 +1,52 @@
-# CieeFront
+# CIEE - Cadastro de Currículos | Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.0.
+Frontend desenvolvido em Angular para cadastro de currículos.
 
-## Development server
+A aplicação permite preencher os dados do candidato, anexar um currículo em PDF e preencher automaticamente nome, e-mail e telefone a partir dos dados extraídos pelo backend.
 
-To start a local development server, run:
+## Tecnologias
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+
+## Requisitos
+
+Antes de executar o projeto, é necessário ter instalado:
+
+- Node.js
+- npm
+- Angular CLI
+
+## Como executar
+
+### 1. Clonar o repositório
+
+```bash
+git clone <URL_DO_REPOSITORIO>
+```
+
+Entre na pasta do frontend:
+
+```bash
+cd CIEE-processo-seletivo-FRONT
+```
+
+### 2. Instalar as dependências
+
+```bash
+npm install
+```
+
+### 3. Executar a aplicação
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Após iniciar, acesse:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
