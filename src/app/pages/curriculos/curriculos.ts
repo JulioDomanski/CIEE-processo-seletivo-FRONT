@@ -58,6 +58,17 @@ export class Curriculos {
 
       error: (erro) => {
         console.error('Erro ao ler o PDF:', erro);
+
+        if (erro.status === 400) {
+          alert(
+            typeof erro.error === 'string'
+              ? erro.error
+              : erro.error?.message ?? 'Arquivo inválido.'
+          );
+
+          return;
+        }
+
         alert('Não foi possível ler os dados do currículo.');
       }
     });
@@ -71,10 +82,29 @@ export class Curriculos {
         this.limparFormulario();
       },
 
-      error: (erro) => {
-        console.error('Erro ao cadastrar currículo:', erro);
-        alert('Erro ao cadastrar currículo.');
+    error: (erro) => {
+      console.error('Erro ao cadastrar currículo:', erro);
+
+      if (erro.status === 400 && erro.error?.errors) {
+        const errors = erro.error.errors;
+
+        const mensagens: string[] = [];
+
+        if (errors.NomeCompleto) {
+          mensagens.push(...errors.NomeCompleto);
+        }
+
+        if (errors.Email) {
+          mensagens.push(...errors.Email);
+        }
+
+        alert(mensagens.join('\n'));
+
+        return;
       }
+
+      alert('Erro ao cadastrar currículo.');
+    }
     });
   }
 
